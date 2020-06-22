@@ -18,8 +18,7 @@ public class GuessNumberController {
 
 
     List<UserInfo> userInfoLists= new ArrayList<UserInfo>();
-//    List<Map<Integer,Integer>> userListMap= new ArrayList<Map<Integer,Integer>>;
-//    Map<List<Integer>> userMapList =
+
     @GetMapping("/guessGame")
     public int oneGameByOneUser(@RequestParam UserInfo userInfo, @RequestParam String guessNumber){
 
