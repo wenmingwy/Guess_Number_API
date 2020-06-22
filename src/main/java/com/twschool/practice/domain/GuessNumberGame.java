@@ -10,14 +10,12 @@ public class GuessNumberGame {
     public GuessNumberGame(AnswerGenerator answerGenerator) {
         this.gameAnswer = answerGenerator.generateAnswer();
     }
-
     public String guess(String userAnswerString) {
         String result = gameAnswer.check(userAnswerString);
         decreaseTryTimes();
         modifyStatus(result);
         return result;
     }
-
     private void modifyStatus(String result) {
         if (CORRECT_RESULT.equals(result)) {
             gameStatus = GameStatus.SUCCEED;
@@ -25,7 +23,6 @@ public class GuessNumberGame {
             gameStatus = GameStatus.FAILED;
         }
     }
-
     private void decreaseTryTimes() {
         leftTryTimes --;
     }
