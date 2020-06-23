@@ -35,6 +35,7 @@ public class GuessNumberController {
             userInfoAll.setContinueWinCount(userInfoAll.getContinueWinCount() - 1);
             userInfoAll.setTotalPoints(pointComputeService.subPoints(userInfoAll.getTotalPoints()));
         }
+        addInfo(userInfoAll);
         return userInfoAll.getTotalPoints();
     }
 
@@ -54,5 +55,11 @@ public class GuessNumberController {
             }
         }
     return userInfo;
+    }
+
+//   增加用户信息到列表
+    public List<UserInfo> addInfo(UserInfo userInfo){
+        userInfoLists.add(userInfo);
+        return userInfoLists;
     }
 }
